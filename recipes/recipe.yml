@@ -8,10 +8,6 @@ image-version: 40 # `latest` is also supported if you want new updates ASAP
 # Module configuration, executed in order.
 ########################################################
 modules:
-  - type: script
-    snippets:
-      - apt-get update
-
   - from-file: gnome/extensions.yml
   - from-file: gnome/install-whitesur-theme.yml
   - from-file: shell/install.yml
