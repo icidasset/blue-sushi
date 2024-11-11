@@ -1,0 +1,28 @@
+type: default-flatpaks
+notify: true
+system:
+  install:
+    - com.discordapp.Discord
+    - com.rtosta.zapzap
+    - com.synology.SynologyDrive
+    - com.transmissionbt.Transmission
+    - com.usebottles.bottles
+    - com.valvesoftware.Steam
+    - com.yubico.yubioath
+    - dev.deedles.Trayscale
+    - dev.geopjr.Collision
+    - dev.zed.Zed
+    - io.bassi.Amberol
+    - io.github.celluloid_player.Celluloid
+    - io.github.fizzyizzy05.binary
+    - io.github.flattool.Warehouse
+    - io.github.zen_browser.zen
+    - io.missioncenter.MissionCenter
+    - md.obsidian.Obsidian
+    - me.proton.Mail
+    - me.sanchezrodriguez.passes
+    - net.agalwood.Motrix
+    - net.codelogistics.webapps
+    - org.nickvision.tubeconverter
+    - org.signal.Signal
+    - rest.insomnia.Insomnia
