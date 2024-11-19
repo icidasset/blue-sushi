@@ -1,8 +1,3 @@
 type: script
-snippets:
-  - git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
-  - cd ./WhiteSur-gtk-theme
-  - ./install.sh --theme all --silent-mode
-  - ./tweaks.sh --gdm --silent-mode
-  - sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
-  - ./tweaks.sh --flatpak --silent-mode
+scripts:
+  - gnome/install-whitesur-theme.sh
