@@ -9,8 +9,8 @@ image-version: latest
 ########################################################
 modules:
   - from-file: gnome/extensions.yml
-  - from-file: gnome/whitesur-deps.yml
-  - from-file: gnome/install-whitesur-theme.yml
+  - from-file: gnome/themes-deps.yml
+  - from-file: gnome/install-theme.yml
   - from-file: shell/install.yml
   - from-file: apps/1password.yml
   - from-file: apps/install.yml

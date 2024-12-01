@@ -1,5 +1,7 @@
 type: rpm-ostree
 install:
+  - gnome-themes-extra
+  - gtk-murrine-engine
   - sassc
   - libappstream-glib
   - libadwaita

@@ -1,3 +1,17 @@
 type: gnome-extensions
 install:
-  - User Themes
+  # - "[QSTweak] Quick Setting Tweaker"
+  # - "ArcMenu"
+  # - "Burn My Windows"
+  # - "Clipboard Indicator"
+  # - "Desktop Cube"
+  # - "Compiz windows effect"
+  # - "One-Click BIOS"
+  # - "Night Theme Switcher"
+  # - "Soft brightness"
+  # - "Status Area Horizontal Spacing"
+  # - "Systemd Manager"
+  # - "Tiling Shell"
+  # - "Top Bar Organizer"
+  # - "Useless Gaps"
+  - "User Themes"

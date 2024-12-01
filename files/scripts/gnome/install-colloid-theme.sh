@@ -9,12 +9,11 @@ set -oue pipefail
 export HOME="/etc/skel/"
 
 # Install
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
-cd WhiteSur-gtk-theme
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
+cd Colloid-gtk-theme
 mkdir -p /etc/skel/.themes
-sudo ./install.sh --silent-mode --dest /etc/skel/.themes --round --highdefinition --shell -panelheight bigger --libadwaita
+sudo ./install.sh --dest /etc/skel/.themes --tweaks rimless --libadwaita
 flatpak override --filesystem=xdg-config/gtk-3.0
 flatpak override --filesystem=xdg-config/gtk-4.0
-sudo ./tweaks.sh --silent-mode --flatpak --color Dark
 cd ..
-rm -rf WhiteSur-gtk-theme
+rm -rf Colloid-gtk-theme
