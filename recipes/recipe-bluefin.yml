@@ -1,4 +1,4 @@
-name: blue-sushi
+name: blue_sushi-bluefin
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/bluefin-nvidia

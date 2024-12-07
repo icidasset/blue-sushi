@@ -1,17 +1,26 @@
 type: gnome-extensions
 install:
-  # - "[QSTweak] Quick Setting Tweaker"
-  # - "ArcMenu"
-  # - "Burn My Windows"
-  # - "Clipboard Indicator"
-  # - "Desktop Cube"
-  # - "Compiz windows effect"
-  # - "One-Click BIOS"
-  # - "Night Theme Switcher"
-  # - "Soft brightness"
-  # - "Status Area Horizontal Spacing"
-  # - "Systemd Manager"
-  # - "Tiling Shell"
-  # - "Top Bar Organizer"
-  # - "Useless Gaps"
-  - "User Themes"
+  - Alphabetical App Grid
+  - AppIndicator and KStatusNotifierItem Support
+  - ArcMenu
+  - Bing Wallpaper
+  - Blur my Shell
+  - Brightness control using ddcutil
+  - Burn My Windows
+  - Clipboard Indicator
+  - Compact Quick Settings
+  - Coverflow Alt-Tab
+  - Dash to Dock # or 'Dock from Dash', or 'Dash2Dock Animated'
+  - DM Theme Changer
+  - Hide Top Bar
+  - Just Perfection
+  # - Quick Settings Audio Panel (🚧 BROKEN)
+  - Tailscale QS
+  - Top Bar Organizer
+  # - Useless Gaps (✏️ Not needed due to tiling window manager)
+  - User Themes
+  - Vitals
+  # TO ADD:
+  # ... A tiling window manager ...
+  # TO TRY:
+  # - Rounded Corners

@@ -10,6 +10,7 @@ export HOME="/etc/skel/"
 
 # Install
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
+git checkout b9f3d5200032242d808c93065e32f8dd7407ece4
 cd Colloid-gtk-theme
 mkdir -p /etc/skel/.themes
 sudo ./install.sh --dest /etc/skel/.themes --tweaks rimless --libadwaita

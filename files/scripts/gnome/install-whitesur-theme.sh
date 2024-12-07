@@ -10,6 +10,7 @@ export HOME="/etc/skel/"
 
 # Install
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+git checkout 7d073f781d4bce0e04daec2523d825a14a7234ce
 cd WhiteSur-gtk-theme
 mkdir -p /etc/skel/.themes
 sudo ./install.sh --silent-mode --dest /etc/skel/.themes --round --highdefinition --shell -panelheight bigger --libadwaita

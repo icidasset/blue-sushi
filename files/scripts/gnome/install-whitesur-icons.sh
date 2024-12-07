@@ -10,6 +10,7 @@ export HOME="/etc/skel/"
 
 # Install
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
+git checkout 092d17fb1abaf0ea15eefc15d2e145a3737b45ea
 cd WhiteSur-icon-theme
 sudo ./install.sh
 rm -rf WhiteSur-icon-theme
