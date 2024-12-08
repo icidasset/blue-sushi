@@ -7,7 +7,7 @@ install:
   - Blur my Shell
   - Brightness control using ddcutil
   - Burn My Windows
-  - Clipboard Indicator
+  - 779 # Clipboard Indicator
   - Compact Quick Settings
   - Coverflow Alt-Tab
   - Dock from Dash
