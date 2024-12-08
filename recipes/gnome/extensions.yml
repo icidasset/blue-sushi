@@ -10,17 +10,17 @@ install:
   - Clipboard Indicator
   - Compact Quick Settings
   - Coverflow Alt-Tab
-  - Dash to Dock # or 'Dock from Dash', or 'Dash2Dock Animated'
+  - Dock from Dash
   - DM Theme Changer
   - Hide Top Bar
   - Just Perfection
-  # - Quick Settings Audio Panel (🚧 BROKEN)
+  - Rounded Corners
   - Tailscale QS
+  - Tiling Assistant
   - Top Bar Organizer
-  # - Useless Gaps (✏️ Not needed due to tiling window manager)
+  - Useless Gaps
   - User Themes
   - Vitals
-  # TO ADD:
-  # ... A tiling window manager ...
-  # TO TRY:
-  # - Rounded Corners
+uninstall:
+  - Dash to Dock
+  - Search Light

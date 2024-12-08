@@ -1,20 +1,179 @@
-############################################
-# Desktop
-############################################
+[org.gnome.desktop.calendar]
+show-weekdate=false
 
 [org.gnome.desktop.interface]
-clock-show-weekday=true
-gtk-theme='Colloid'
-icon-theme='WhiteSur'
+accent-color='slate'
+color-scheme='prefer-dark'
+cursor-theme='macOS'
+document-font-name='SF Pro weight=509 9 @opsz=17,wght=509'
+enable-animations=true
+font-antialiasing='grayscale'
+font-hinting='none'
+font-name='SF Pro weight=509 9 @opsz=17,wght=509'
+gtk-theme='Colloid-Dark'
+icon-theme='WhiteSur-dark'
+text-scaling-factor=1.0
 
-############################################
-# File navigation
-############################################
+[org.gnome.desktop.peripherals.mouse]
+accel-profile='default'
+speed=0.0
 
-[org.gtk.gtk4.Settings.FileChooser]
-sort-directories-first=true
+[org.gnome.desktop.wm.keybindings]
+maximize=@as []
+move-to-monitor-down=['<Super><Shift>Down']
+move-to-monitor-left=['<Super><Shift>Left']
+move-to-monitor-right=['<Super><Shift>Right']
+move-to-monitor-up=['<Super><Shift>Up']
+move-to-workspace-down=['<Control><Shift><Alt>Down']
+move-to-workspace-left=['<Super><Shift>Page_Up', '<Super><Shift><Alt>Left', '<Control><Shift><Alt>Left']
+move-to-workspace-right=['<Super><Shift>Page_Down', '<Super><Shift><Alt>Right', '<Control><Shift><Alt>Right']
+move-to-workspace-up=['<Control><Shift><Alt>Up']
+switch-applications=['<Super>Tab']
+switch-applications-backward=['<Shift><Super>Tab']
+switch-group=['<Super>Above_Tab', '<Alt>Above_Tab']
+switch-group-backward=['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']
+switch-panels=['<Control><Alt>Tab']
+switch-panels-backward=['<Shift><Control><Alt>Tab']
+switch-to-workspace-1=['<Super>Home']
+switch-to-workspace-last=['<Super>End']
+switch-to-workspace-left=['<Super>Page_Up', '<Super><Alt>Left', '<Control><Alt>Left']
+switch-to-workspace-right=['<Super>Page_Down', '<Super><Alt>Right', '<Control><Alt>Right']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+unmaximize=@as []
+
+[org.gnome.desktop.wm.preferences]
+action-double-click-titlebar='minimize'
+button-layout='close,minimize,maximize:'
+mouse-button-modifier='<Super>'
+
+[org.gnome.mutter]
+attach-modal-dialogs=true
+center-new-windows=true
+edge-tiling=false
+overlay-key='Super_L'
+workspaces-only-on-primary=true
+
+[org.gnome.mutter.keybindings]
+cancel-input-capture=['<Super><Shift>Escape']
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org.gnome.mutter.wayland.keybindings]
+restore-shortcuts=['<Super>Escape']
+
+[org.gnome.settings-daemon.plugins.color]
+night-light-enabled=true
+night-light-schedule-automatic=true
+night-light-schedule-from=18.0
+night-light-temperature=uint32 3232
+
+[org.gnome.settings-daemon.plugins.power]
+sleep-inactive-ac-timeout=5400
+sleep-inactive-ac-type='suspend'
+
+[org.gnome.shell.extensions.arcmenu]
+alphabetize-all-programs=true
+apps-show-extra-details=true
+arc-menu-icon=71
+arcmenu-hotkey=['Super_L']
+gnome-dash-show-applications=false
+menu-button-appearance='Icon'
+menu-button-icon='Menu_Icon'
+menu-layout='GnomeOverview'
+position-in-panel='Left'
+runner-hotkey=['<Super>space']
+runner-position='Top'
+runner-search-display-style='List'
+runner-show-frequent-apps=true
+show-activities-button=false
+
+[org.gnome.shell.extensions.burn-my-windows]
+active-profile='/var/home/toko/.config/burn-my-windows/profiles/1733180072993421.conf'
+preview-effect=''
+
+[org.gnome.shell.extensions.coverflowalttab]
+highlight-mouse-over=false
+icon-has-shadow=true
+icon-style='Classic'
+switcher-looping-method='Carousel'
+switcher-style='Coverflow'
+
+[org.gnome.shell.extensions.dash-to-dock]
+disable-overview-on-startup=true
+dock-position='BOTTOM'
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+running-indicator-style='DOT'
+show-apps-at-top=true
+show-running=true
+show-show-apps-button=true
+
+[org.gnome.shell.extensions.display-brightness-ddcutil]
+allow-zero-brightness=false
+ddcutil-queue-ms=130.0
+ddcutil-sleep-multiplier=50.0
+decrease-brightness-shortcut=['XF86MonBrightnessDown']
+hide-system-indicator=false
+increase-brightness-shortcut=['XF86MonBrightnessUp']
+position-system-menu=3.0
+show-internal-slider=false
+step-change-keyboard=15.0
+
+[org.gnome.shell.extensions.dmthemechanger]
+cursor-theme-dark='macOS'
+cursor-theme-light='macOS-White'
+gtk3-theme-dark='Colloid-Dark'
+gtk3-theme-light='Colloid-Light'
+icon-theme-dark='WhiteSur-dark'
+icon-theme-light='WhiteSur-light'
+optimize-darklight-switch-transition=false
+shell-theme-dark='Colloid-Dark'
+shell-theme-light='Colloid-Light'
+
+[org.gnome.shell.extensions.hidetopbar]
+enable-active-window=false
+enable-intellihide=false
+hot-corner=false
+keep-round-corners=true
+mouse-sensitive=true
+mouse-sensitive-fullscreen-window=false
+mouse-triggers-overview=false
+show-in-overview=true
+
+[org.gnome.shell.extensions.just-perfection]
+dash-icon-size=48
+panel-size=39
+
+[org.gnome.shell.extensions.tiling-assistant]
+center-window=['<Super>c']
+maximize-with-gap=true
+overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
+restore-window=['<Super>Down']
+single-screen-gap=10
+tile-edit-mode=['<Super>t']
+tile-left-half=['<Super>Left', '<Super>KP_4']
+tile-maximize=['<Super>Up', '<Super>KP_5']
+tile-right-half=['<Super>Right', '<Super>KP_6']
+window-gap=10
+
+[org.gnome.shell.extensions.useless-gaps]
+gap-size=10
+
+[org.gnome.shell.extensions.user-theme]
+name='Colloid-Dark'
+
+[org.gnome.shell.keybindings]
+focus-active-notification=['<Super>n']
+shift-overview-down=['<Super><Alt>Down']
+shift-overview-up=['<Super><Alt>Up']
+toggle-message-tray=['<Super>v', '<Super>m']
+
+[org.gtk.gtk4.settings.file-chooser]
+date-format='regular'
+location-mode='path-bar'
 show-hidden=true
-
-[org.gtk.Settings.FileChooser]
+sort-column='name'
 sort-directories-first=true
-show-hidden=true
+sort-order='ascending'
+type-format='category'
+view-type='list'

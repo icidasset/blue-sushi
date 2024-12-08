@@ -2,3 +2,4 @@ type: script
 scripts:
   - gnome/install-colloid-theme.sh
   - gnome/install-whitesur-icons.sh
+  - gnome/install-macos-cursors.sh
