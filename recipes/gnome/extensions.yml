@@ -1,26 +1,25 @@
 type: gnome-extensions
 install:
-  - Alphabetical App Grid
-  - AppIndicator and KStatusNotifierItem Support
-  # - ArcMenu
-  # - Bing Wallpaper
-  # - Blur my Shell
-  # - Brightness control using ddcutil
-  # - Burn My Windows
-  # - 779 # Clipboard Indicator
-  # - Compact Quick Settings
-  # - Coverflow Alt-Tab
-  # - Dock from Dash
-  # - DM Theme Changer
-  # - Hide Top Bar
-  # - Just Perfection
-  # - Rounded Corners
-  # - Tailscale QS
-  # - Tiling Assistant
-  # - Top Bar Organizer
-  # - Useless Gaps
-  # - User Themes
-  # - Vitals
+  - 4269 # Alphabetical App Grid
+  - 615 # AppIndicator and KStatusNotifierItem Support
+  - 3628 # ArcMenu
+  - 1262 # Bing Wallpaper
+  - 3193 # Blur my Shell
+  - 2645 # Brightness control using ddcutil
+  - 4679 # Burn My Windows
+  - 779 # Clipboard Indicator
+  - 97 # Coverflow Alt-Tab
+  - 4703 # Dock from Dash
+  # - 7379 # DM Theme Changer (not updated yet for gnome 48)
+  - 545 # Hide Top Bar
+  - 3843 # Just Perfection
+  - 1514 # Rounded Corners
+  - 6139 # Tailscale QS
+  - 3733 # Tiling Assistant
+  # - 4356 # Top Bar Organizer (not updated yet for gnome 48)
+  - 4684 # Useless Gaps
+  - 19 # User Themes
+  - 1460 # Vitals
 uninstall:
   - Dash to Dock
   - Search Light

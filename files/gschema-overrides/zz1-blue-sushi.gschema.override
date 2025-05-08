@@ -73,7 +73,7 @@ sleep-inactive-ac-timeout=5400
 sleep-inactive-ac-type='suspend'
 
 [org.gnome.shell.extensions.arcmenu]
-alphabetize-all-programs=true
+# alphabetize-all-programs=true
 apps-show-extra-details=true
 arc-menu-icon=71
 arcmenu-hotkey=['Super_L']
