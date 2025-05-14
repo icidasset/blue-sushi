@@ -149,15 +149,15 @@ center-window=['<Super>c']
 maximize-with-gap=true
 overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.desktop.wm.keybindings.maximize': <['<Super>Up']>, 'org.gnome.desktop.wm.keybindings.unmaximize': <['<Super>Down', '<Alt>F5']>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <['<Super>Left']>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <['<Super>Right']>}
 restore-window=['<Super>Down']
-single-screen-gap=10
+single-screen-gap=4
 tile-edit-mode=['<Super>t']
-tile-left-half=['<Super>Left', '<Super>KP_4']
+#tile-left-half=['<Super>Left', '<Super>KP_4']
 tile-maximize=['<Super>Up', '<Super>KP_5']
-tile-right-half=['<Super>Right', '<Super>KP_6']
-window-gap=10
+#tile-right-half=['<Super>Right', '<Super>KP_6']
+window-gap=4
 
 [org.gnome.shell.extensions.useless-gaps]
-gap-size=10
+gap-size=4
 
 [org.gnome.shell.extensions.user-theme]
 name='Colloid-Dark'

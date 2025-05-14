@@ -9,17 +9,14 @@ install:
   - 4679 # Burn My Windows
   - 779 # Clipboard Indicator
   - 97 # Coverflow Alt-Tab
-  - 4703 # Dock from Dash
-  # - 7379 # DM Theme Changer (not updated yet for gnome 48)
+  # - 4703 # Dock from Dash
+  - 7379 # DM Theme Changer
   - 545 # Hide Top Bar
   - 3843 # Just Perfection
-  - 1514 # Rounded Corners
-  - 6139 # Tailscale QS
+  - 4691 # PIP on top
+  # - 6139 # Tailscale QS
+  - 5112 # Tailscale Status
   - 3733 # Tiling Assistant
-  # - 4356 # Top Bar Organizer (not updated yet for gnome 48)
+  - 4356 # Top Bar Organizer
   - 4684 # Useless Gaps
   - 19 # User Themes
-  - 1460 # Vitals
-uninstall:
-  - Dash to Dock
-  - Search Light

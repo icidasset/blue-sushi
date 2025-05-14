@@ -1,0 +1,11 @@
+type: dnf
+repos:
+  copr:
+    - sneexy/zen-browser
+optfix:
+  - io.github.zen_browser.zen
+  - zen-browser
+  - zen
+install:
+  packages:
+    - zen-browser

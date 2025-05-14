@@ -2,7 +2,7 @@ name: blue_sushi-bluefin
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/bluefin
-image-version: latest-42.20250507
+image-version: gts
 
 ########################################################
 # Module configuration, executed in order.
@@ -11,8 +11,10 @@ modules:
   - from-file: gnome/extensions.yml
   - from-file: gnome/themes-deps.yml
   - from-file: gnome/install-theme.yml
+  - from-file: misc/files.yml
   - from-file: shell/install.yml
   - from-file: apps/1password.yml
+  - from-file: apps/zen.yml
   - from-file: apps/install.yml
   - from-file: gtk/gschema-overrides.yml
 
