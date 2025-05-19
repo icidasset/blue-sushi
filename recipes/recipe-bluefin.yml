@@ -15,7 +15,8 @@ modules:
   - from-file: shell/install.yml
   - from-file: apps/1password.yml
   - from-file: apps/zen.yml
-  - from-file: apps/install.yml
+  - from-file: apps/dnf.yml
+  - from-file: apps/flatpak.yml
   - from-file: gtk/gschema-overrides.yml
 
   # This sets up the proper policy & signing files for signed images to work fully.

@@ -19,7 +19,9 @@ system:
     - io.github.fizzyizzy05.binary
     - io.github.flattool.Warehouse
     - io.github.pieterdd.RcloneShuttle
+    - io.github.zaedus.spider
     # - io.github.zen_browser.zen
+    - it.mijorus.gearlever
     - io.missioncenter.MissionCenter
     - md.obsidian.Obsidian
     - me.proton.Mail

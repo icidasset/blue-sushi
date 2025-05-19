@@ -13,6 +13,7 @@ install:
   - 7379 # DM Theme Changer
   - 545 # Hide Top Bar
   - 3843 # Just Perfection
+  - 2236 # Night Theme Switcher
   - 4691 # PIP on top
   # - 6139 # Tailscale QS
   - 5112 # Tailscale Status
@@ -20,3 +21,4 @@ install:
   - 4356 # Top Bar Organizer
   - 4684 # Useless Gaps
   - 19 # User Themes
+  - 6816 # WTMB
