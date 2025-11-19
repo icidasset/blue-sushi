@@ -3,7 +3,9 @@ notify: false
 system:
   install:
     - app.drey.EarTag
+    - app.zen_browser.zen
     - ca.desrt.dconf-editor
+    - com.bitwarden.desktop
     - com.discordapp.Discord
     - com.rtosta.zapzap
     - com.synology.SynologyDrive
@@ -20,6 +22,7 @@ system:
     - io.github.flattool.Warehouse
     - io.github.pieterdd.RcloneShuttle
     - io.github.zaedus.spider
+    - io.gitlab.gregorni.Letterpress
     - it.mijorus.gearlever
     - io.missioncenter.MissionCenter
     - md.obsidian.Obsidian

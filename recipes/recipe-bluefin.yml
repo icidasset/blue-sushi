@@ -13,8 +13,7 @@ modules:
   - from-file: gnome/install-theme.yml
   - from-file: misc/files.yml
   - from-file: shell/install.yml
-  - from-file: apps/1password.yml
-  - from-file: apps/zen.yml
+  # - from-file: apps/zen.yml
   - from-file: apps/dnf.yml
   - from-file: apps/flatpak.yml
   - from-file: gtk/gschema-overrides.yml
