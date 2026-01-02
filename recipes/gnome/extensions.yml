@@ -22,4 +22,4 @@ install:
   - 19 # User Themes
   - 8594 # Vicinae
   - 6816 # WTMB
-  - 8109 # Zed Search Provider
+  # - 8109 # Zed Search Provider
