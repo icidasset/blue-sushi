@@ -2,7 +2,7 @@ name: blue_sushi-bluefin
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/bluefin
-image-version: gts
+image-version: stable
 
 ########################################################
 # Module configuration, executed in order.
