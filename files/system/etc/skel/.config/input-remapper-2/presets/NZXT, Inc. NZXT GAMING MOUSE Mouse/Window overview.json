@@ -4,11 +4,11 @@
             {
                 "type": 1,
                 "code": 275,
-                "origin_hash": "bea83459863ad7339a156a90447c5ada"
+                "origin_hash": "8b6c78af74beb3cf1b71b01522b00e8a"
             }
         ],
         "target_uinput": "keyboard",
-        "output_symbol": "key(KEY_LEFTMETA)",
+        "output_symbol": "KEY_LEFTMETA",
         "mapping_type": "key_macro"
     },
     {
@@ -16,11 +16,11 @@
             {
                 "type": 1,
                 "code": 276,
-                "origin_hash": "bea83459863ad7339a156a90447c5ada"
+                "origin_hash": "8b6c78af74beb3cf1b71b01522b00e8a"
             }
         ],
         "target_uinput": "keyboard",
-        "output_symbol": "hold_keys(KEY_LEFTMETA, KEY_SPACE)",
+        "output_symbol": "KEY_LEFTALT + KEY_TAB",
         "mapping_type": "key_macro"
     }
 ]
