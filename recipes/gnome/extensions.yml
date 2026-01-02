@@ -9,7 +9,7 @@ install:
   - 4679 # Burn My Windows
   # - 779 # Clipboard Indicator
   - 97 # Coverflow Alt-Tab
-  - 7379 # DM Theme Changer
+  # - 7379 # DM Theme Changer
   - 545 # Hide Top Bar
   - 3843 # Just Perfection
   - 8316 # Monitor DDC Brightness/Contrast
