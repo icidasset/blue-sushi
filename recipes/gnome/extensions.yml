@@ -12,7 +12,7 @@ install:
   # - 7379 # DM Theme Changer
   - 545 # Hide Top Bar
   - 3843 # Just Perfection
-  - 8316 # Monitor DDC Brightness/Contrast
+  # - 8316 # Monitor DDC Brightness/Contrast
   - 2236 # Night Theme Switcher
   - 4691 # PIP on top
   - 5112 # Tailscale Status
