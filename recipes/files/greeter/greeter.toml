@@ -1,0 +1,16 @@
+# blue-sushi Noctalia Greeter configuration
+# Docs: https://docs.noctalia.dev/greeter/getting-started/configuration/
+# Full example: https://github.com/noctalia-dev/noctalia-greeter/blob/main/examples/greeter.toml
+
+[session]
+default = "Niri"
+
+[appearance]
+scheme = "Noctalia"
+theme_mode = "dark"
+
+[idle]
+timeout = 120
+
+[keyboard]
+layout = "us"

@@ -1,4 +1,4 @@
-name: build-bluefin
+name: build-noctalia
 on:
   schedule:
     - cron:
@@ -23,7 +23,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - recipe-bluefin.yml
+          - recipe-noctalia.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

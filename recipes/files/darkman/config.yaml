@@ -1,0 +1,13 @@
+# blue-sushi darkman configuration
+# Docs: https://darkman.whynothugo.nl/darkman.conf.5
+
+# Expose the current mode over the XDG settings portal D-Bus API.
+# Firefox and other portal-reading apps respect this.
+portal: true
+
+# Sunset/sunrise from the system location via geoclue.
+# If geoclue doesn't resolve on your system (no agent), uncomment
+# lat/lng below and usegeoclue will fall back to them.
+usegeoclue: true
+# lat: 51.22
+# lng: 4.40

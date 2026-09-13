@@ -1,6 +1,0 @@
-type: dnf
-install:
-  packages:
-    - clang
-    - elvish
-    - gcc-c++

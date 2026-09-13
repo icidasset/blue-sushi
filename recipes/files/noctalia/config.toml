@@ -1,0 +1,52 @@
+# blue-sushi Noctalia configuration
+# Docs: https://docs.noctalia.dev/noctalia/
+# Full reference: https://github.com/noctalia-dev/noctalia/blob/main/example.toml
+
+[shell]
+telemetry_enabled = false
+# Use Noctalia's built-in polkit agent (matches the shell look, no extra process).
+polkit_agent = true
+
+[theme]
+mode = "auto"              # Automatic dark/light via [location]
+source = "builtin"
+builtin = "Noctalia"
+
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+transition_on_startup = true
+# Empty directory = XDG Pictures directory.
+
+# Blurred wallpaper backdrop, shown in the niri overview.
+[backdrop]
+enabled = true
+
+# Lock screen (Noctalia locks before suspend by default).
+[idle.behavior.lock]
+enabled = true
+timeout = 300
+action = "lock"
+
+[idle.behavior.screen-off]
+enabled = true
+timeout = 600
+action = "screen_off"
+
+[nightlight]
+enabled = true
+
+# Where am I — feeds theme auto mode (and weather/night light if enabled).
+[location]
+# Resolve sunset/sunrise from your IP address. Replace with a fixed
+# address (e.g. "Antwerp, Belgium") if you prefer.
+auto_locate = true
+
+# Keep GTK apps in sync with the shell's mode.
+[hooks]
+theme_mode_changed = "gsettings set org.gnome.desktop.interface color-scheme prefer-$NOCTALIA_THEME_MODE"
+
+[bar.main]
+start  = ["launcher", "wallpaper", "workspaces"]
+center = ["clock"]
+end    = ["media", "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "control-center", "session"]

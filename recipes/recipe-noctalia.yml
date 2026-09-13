@@ -1,0 +1,71 @@
+name: blue_sushi-noctalia
+description: This is my personal OS image.
+
+base-image: ghcr.io/ublue-os/base-main
+image-version: stable
+
+########################################################
+# Module configuration, executed in order.
+########################################################
+modules:
+  - from-file: akmods.yml
+  - from-file: dnf.yml
+  - from-file: gtk/gschema-overrides.yml
+
+  # Starts the Noctalia shell for every login, regardless of the user's
+  # niri config (niri Wants=xdg-desktop-autostart.target).
+  - type: files
+    files:
+      - source: autostart/noctalia.desktop
+        destination: /etc/xdg/autostart/noctalia.desktop
+      - source: niri/config.kdl
+        destination: /usr/etc/skel/.config/niri/config.kdl
+      - source: noctalia/config.toml
+        destination: /usr/etc/skel/.config/noctalia/config.toml
+      - source: greetd/config.toml
+        destination: /etc/greetd/config.toml
+      - source: darkman/config.yaml
+        destination: /usr/etc/skel/.config/darkman/config.yaml
+      - source: greeter/greeter.toml
+        destination: /usr/share/noctalia-greeter/greeter.toml
+      - source: tmpfiles.d/noctalia-greeter.conf
+        destination: /usr/lib/tmpfiles.d/noctalia-greeter.conf
+
+  # Nerd Font symbols — file-type icons for yazi.
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - NerdFontsSymbolsOnly
+
+  # resvg (SVG previews in yazi) — official binary, not in Fedora.
+  - type: script
+    scripts:
+      - install-resvg.sh
+
+  # Enables login manager, Bluetooth, TLP, and the darkman user service.
+  - type: systemd
+    system:
+      enabled:
+        - greetd.service
+        - accounts-daemon.service
+        - bluetooth.service
+        - tailscaled.service
+        - tlp.service
+    user:
+      enabled:
+        - darkman.service
+
+  # Flatpak management GUI (Flathub remote is preconfigured in base-main).
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - com.github.tchx84.Flatseal
+          - io.github.flattool.Warehouse
+
+  # Installs the soar package manager
+  - type: soar
+
+  # This sets up the proper policy & signing files for signed images to work fully.
+  - type: signing

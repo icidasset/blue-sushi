@@ -1,0 +1,116 @@
+type: dnf
+repos:
+  # Terra — hosts ghostty and noctalia-greeter (not in Fedora).
+  # Kept in the image so `rpm-ostree install` can use it on the live system.
+  files:
+    - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+  # yazi (TUI file manager) — unofficial COPR per the official yazi docs.
+  copr:
+    - lihaohong/yazi
+install:
+  # niri recommends these as weak deps, but Noctalia replaces all of them.
+  exclude:
+    - alacritty
+    - fuzzel
+    - swaylock
+    - waybar
+  packages:
+    # Audio
+    - pipewire
+    - pipewire-alsa                     # Legacy ALSA apps
+    - pipewire-pulse
+    - playerctl
+    - wireplumber
+
+    # Dev
+    - clang
+    - cmake
+    - direnv
+    - gcc-c++
+    - python3
+    - rustup
+
+    # Desktop (Login / Shell / Window Manager)
+    - accountsservice                   # User avatars on the greeter
+    - greetd                            # Minimal login manager (starts niri session)
+    - niri
+    - noctalia
+    - noctalia-greeter
+
+    # Display
+    - brightnessctl
+
+    # File systems
+    - fuse
+    - fuse-libs
+    - fuse-common
+    - udiskie                           # USB auto-mount
+
+    # File managers
+    - imv                              # Image viewer (screenshots etc.)
+    - nemo                             # GUI file manager (Cinnamon)
+    - yazi                             # TUI file manager (COPR: lihaohong/yazi)
+
+    # Fonts
+    - google-noto-color-emoji-fonts
+    - google-noto-sans-fonts
+
+    # Networking
+    - bluez                             # Bluetooth daemon
+    - blueman                           # Bluetooth manager
+    - networkmanager
+    - tailscale
+
+    # Shell + Terminal
+    - bat
+    - btop
+    - curl
+    - dua-cli
+    - elvish
+    - eza
+    - fzf
+    - ghostty
+    - git
+    - jq
+    - ripgrep
+    - wget
+    - zoxide
+
+
+    # 📦️ Misc
+
+    - 7zip
+    - cliphist                          # Clipboard history manager
+    - darkman                           # Automatic light/dark theme switching
+    - fd-find                           # File searching
+    - ffmpeg-free                       # Video thumbnails
+    - file                              # MIME detection
+    - geoclue2                          # Location for darkman's sunset/sunrise
+    - imagemagick
+    - poppler-utils                     # PDF preview
+    - tlp                               # Power/Battery
+    - wl-clipboard                      # Clipboard utils
+    - wl-screenrec                      # Screen recording
+    - xdg-user-dirs                     # Create standard user directories
+
+    ## Authentication agent
+    - polkit
+
+    ## Desktop misc, GTK, X11, etc.
+    - gio
+    - grim
+    - gtk4
+    - libadwaita
+    - slurp
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk
+    - xdg-open
+    - xwayland-satellite
+
+    ## Password storage
+    - gnome-keyring
+    - gnome-keyring-pam
+
+    ## Nirimod deps
+    - python3-gobject                   # PyGObject
+    - python3-cairo                     # Pycairo

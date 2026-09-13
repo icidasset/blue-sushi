@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Noctalia Shell
+Comment=Noctalia desktop shell: bar, launcher, panels, notifications
+Exec=noctalia
+NoDisplay=true

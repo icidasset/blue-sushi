@@ -1,0 +1,138 @@
+// blue-sushi niri configuration
+// niri docs: https://niri-wm.github.io/niri/Configuration:-Introduction.html
+// Noctalia on niri: https://docs.noctalia.dev/noctalia/compositor-settings/niri/
+
+input {
+    keyboard {
+        xkb {
+            // Change to your layout (e.g. "us" -> "be") if needed.
+            layout "us"
+        }
+    }
+
+    touchpad {
+        // Framework touchpad.
+        tap-to-click true
+        // natural-scroll true
+    }
+}
+
+layout {
+    gaps 12
+    center-focused-column "never"
+    // Dark workspace background; the Noctalia wallpaper (and backdrop in
+    // overview) covers the bulk of the screen.
+    background-color "#232136"
+}
+
+// Start the desktop pieces when the session begins.
+// Noctalia itself starts via /etc/xdg/autostart (works even without this
+// config); only per-user services are spawned here.
+spawn-at-startup "udiskie"
+
+// Rounded corners for a modern look.
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+}
+
+// Floating Noctalia settings window.
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+// Blur behind windows (requires niri 26.04+).
+window-rule {
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// Noctalia surfaces: blur behind bar, panels, dock, notifications, OSD.
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        xray false
+    }
+}
+
+// Show the Noctalia backdrop (blurred wallpaper) in the overview.
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+// Allows notification actions and window activation from Noctalia.
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+binds {
+    // Quit and power
+    Mod+Shift+E { quit; }
+    Mod+Shift+P { power-off-monitors; }
+
+    // Noctalia shell
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
+    Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
+    Mod+Escape { spawn-sh "noctalia msg session lock"; }
+    PrintScreen { spawn-sh "noctalia msg screenshot-region"; }
+
+    // Audio and brightness (OSD handled by Noctalia)
+    XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
+
+    // Apps
+    Mod+Return { spawn "ghostty"; }
+
+    // Focus
+    Mod+H / Mod+Left { focus-column-left; }
+    Mod+J / Mod+Down { focus-column-down; }
+    Mod+K / Mod+Up { focus-column-up; }
+    Mod+L / Mod+Right { focus-column-right; }
+
+    // Move windows
+    Mod+Shift+H / Mod+Shift+Left { move-column-left; }
+    Mod+Shift+J / Mod+Shift+Down { move-column-down; }
+    Mod+Shift+K / Mod+Shift+Up { move-column-up; }
+    Mod+Shift+L / Mod+Shift+Right { move-column-right; }
+
+    // Windows
+    Mod+F { toggle-window-floating; }
+    Mod+Shift+F { maximize-column; }
+    Mod+Shift+PageDown { consume-window-into-column; }
+    Mod+Shift+PageUp { expel-window-from-column; }
+
+    // Workspaces
+    Mod+PageUp { switch-workspace-prev; }
+    Mod+PageDown { switch-workspace-next; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+}
