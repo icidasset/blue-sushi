@@ -42,6 +42,10 @@ enabled = true
 # address (e.g. "Antwerp, Belgium") if you prefer.
 auto_locate = true
 
+[plugins]
+# Community plugin: daily Bing (or NASA) wallpaper + caption on the bar.
+enabled = ["nzlov/daily-wallpaper"]
+
 # Keep GTK apps and the terminal in sync with the shell's mode
 # (see /usr/libexec/blue-sushi-apply-theme.sh).
 [hooks]
@@ -50,4 +54,4 @@ theme_mode_changed = "/usr/libexec/blue-sushi-apply-theme.sh $NOCTALIA_THEME_MOD
 [bar.main]
 start  = ["launcher", "wallpaper", "workspaces"]
 center = ["clock"]
-end    = ["media", "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "control-center", "session"]
+end    = ["media", "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "control-center", "session", "nzlov/daily-wallpaper:widget"]
