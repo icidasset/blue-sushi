@@ -59,7 +59,7 @@ install:
     # Networking
     - bluez                             # Bluetooth daemon
     - blueman                           # Bluetooth manager
-    - networkmanager
+    - NetworkManager
     - tailscale
 
     # Shell + Terminal
@@ -87,11 +87,10 @@ install:
     - ffmpeg-free                       # Video thumbnails
     - file                              # MIME detection
     - geoclue2                          # Location for darkman's sunset/sunrise
-    - imagemagick
+    - ImageMagick
     - poppler-utils                     # PDF preview
     - tlp                               # Power/Battery
     - wl-clipboard                      # Clipboard utils
-    - wl-screenrec                      # Screen recording
     - xdg-user-dirs                     # Create standard user directories
 
     ## Authentication agent

@@ -2,7 +2,7 @@ name: blue_sushi-noctalia
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/base-main
-image-version: stable
+image-version: latest
 
 ########################################################
 # Module configuration, executed in order.
@@ -38,8 +38,6 @@ modules:
         destination: /usr/lib/tmpfiles.d/noctalia-greeter.conf
       - source: environment
         destination: /etc/environment
-      - source: usr/libexec/blue-sushi-apply-theme.sh
-        destination: /usr/libexec/blue-sushi-apply-theme.sh
 
   # Custom ujust recipes (files/justfiles/*.just)
   - type: justfiles
