@@ -10,3 +10,14 @@ view-type='list'
 
 [org.gnome.desktop.interface]
 color-scheme='prefer-dark'
+cursor-size=24
+cursor-theme='macOS'
+gtk-theme='Adwaita-dark'
+icon-theme='WhiteSur-dark'
+font-name='SF Pro weight=509 9 @opsz=17,wght=509'
+document-font-name='SF Pro weight=509 9 @opsz=17,wght=509'
+font-antialiasing='grayscale'
+font-hinting='none'
+
+[org.gnome.nautilus.preferences]
+show-hidden-files=true

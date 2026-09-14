@@ -1,0 +1,4 @@
+# blue-sushi ghostty configuration
+# The theme line is managed by the automatic dark/light switching
+# (Noctalia hook -> /usr/libexec/blue-sushi-apply-theme.sh).
+theme = rose-pine

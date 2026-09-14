@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Vicinae Server
+Comment=Vicinae launcher backend (server, file indexer, clipboard)
+Exec=vicinae server
+NoDisplay=true

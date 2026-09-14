@@ -36,6 +36,7 @@ install:
     - niri
     - noctalia
     - noctalia-greeter
+    - vicinae                           # Command launcher (Raycast-style)
 
     # Display
     - brightnessctl
@@ -48,7 +49,7 @@ install:
 
     # File managers
     - imv                              # Image viewer (screenshots etc.)
-    - nemo                             # GUI file manager (Cinnamon)
+    - nautilus                         # GUI file manager (GNOME Files, GTK4 → follows dark/light)
     - yazi                             # TUI file manager (COPR: lihaohong/yazi)
 
     # Fonts

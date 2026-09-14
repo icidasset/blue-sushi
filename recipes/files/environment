@@ -1,0 +1,5 @@
+# blue-sushi: system-wide Wayland cursor theme
+# (niri server-side cursor + non-GTK apps like ghostty/Vicinae).
+# GTK apps take cursor-theme from gsettings instead (see gschema override).
+XCURSOR_THEME=macOS
+XCURSOR_SIZE=24

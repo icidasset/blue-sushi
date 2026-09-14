@@ -18,6 +18,8 @@ modules:
     files:
       - source: autostart/noctalia.desktop
         destination: /etc/xdg/autostart/noctalia.desktop
+      - source: autostart/vicinae-server.desktop
+        destination: /etc/xdg/autostart/vicinae-server.desktop
       - source: niri/config.kdl
         destination: /usr/etc/skel/.config/niri/config.kdl
       - source: noctalia/config.toml
@@ -26,10 +28,21 @@ modules:
         destination: /etc/greetd/config.toml
       - source: darkman/config.yaml
         destination: /usr/etc/skel/.config/darkman/config.yaml
+      - source: ghostty/config
+        destination: /usr/etc/skel/.config/ghostty/config
+      - source: usr/libexec/blue-sushi-apply-theme.sh
+        destination: /usr/libexec/blue-sushi-apply-theme.sh
       - source: greeter/greeter.toml
         destination: /usr/share/noctalia-greeter/greeter.toml
       - source: tmpfiles.d/noctalia-greeter.conf
         destination: /usr/lib/tmpfiles.d/noctalia-greeter.conf
+      - source: environment
+        destination: /etc/environment
+      - source: usr/libexec/blue-sushi-apply-theme.sh
+        destination: /usr/libexec/blue-sushi-apply-theme.sh
+
+  # Custom ujust recipes (files/justfiles/*.just)
+  - type: justfiles
 
   # Nerd Font symbols — file-type icons for yazi.
   - type: fonts
@@ -41,6 +54,16 @@ modules:
   - type: script
     scripts:
       - install-resvg.sh
+
+  # WhiteSur icon theme — not in Fedora; installed from source.
+  - type: script
+    scripts:
+      - install-whitesur-icons.sh
+
+  # Apple cursor theme (ful1e5) — not in Fedora; installed from releases.
+  - type: script
+    scripts:
+      - install-apple-cursors.sh
 
   # Enables login manager, Bluetooth, TLP, and the darkman user service.
   - type: systemd

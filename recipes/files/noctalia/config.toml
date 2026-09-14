@@ -42,9 +42,10 @@ enabled = true
 # address (e.g. "Antwerp, Belgium") if you prefer.
 auto_locate = true
 
-# Keep GTK apps in sync with the shell's mode.
+# Keep GTK apps and the terminal in sync with the shell's mode
+# (see /usr/libexec/blue-sushi-apply-theme.sh).
 [hooks]
-theme_mode_changed = "gsettings set org.gnome.desktop.interface color-scheme prefer-$NOCTALIA_THEME_MODE"
+theme_mode_changed = "/usr/libexec/blue-sushi-apply-theme.sh $NOCTALIA_THEME_MODE"
 
 [bar.main]
 start  = ["launcher", "wallpaper", "workspaces"]

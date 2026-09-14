@@ -12,5 +12,9 @@ theme_mode = "dark"
 [idle]
 timeout = 120
 
+[cursor]
+theme = "macOS"
+size = 24
+
 [keyboard]
 layout = "us"
