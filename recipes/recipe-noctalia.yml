@@ -12,6 +12,11 @@ modules:
   - from-file: dnf.yml
   - from-file: gtk/gschema-overrides.yml
 
+  # Create default user
+  - type: script
+    scripts:
+      - create-default-user.sh
+
   # Starts the Noctalia shell for every login, regardless of the user's
   # niri config (niri Wants=xdg-desktop-autostart.target).
   - type: files
