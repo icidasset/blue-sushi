@@ -64,6 +64,7 @@ install:
     # Networking
     - bluez                             # Bluetooth daemon
     - NetworkManager
+    - network-manager-applet            # nm-connection-editor: GUI for DHCP/static/DNS connection profiles
     - tailscale
 
     # Shell + Terminal
