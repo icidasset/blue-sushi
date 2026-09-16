@@ -1,12 +1,16 @@
 type: dnf
 repos:
-  # Terra — hosts ghostty and noctalia-greeter (not in Fedora).
-  # Kept in the image so `rpm-ostree install` can use it on the live system.
+  # Terra — hosts ghostty, noctalia-greeter, and vicinae (not in Fedora).
+  # noctalia itself ships in the Fedora 44+ default repos, so no Terra
+  # package is needed for it. Kept in the image so `rpm-ostree install`
+  # can use it on the live system.
   files:
     - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+
   # yazi (TUI file manager) — unofficial COPR per the official yazi docs.
   copr:
     - lihaohong/yazi
+
 install:
   # niri recommends these as weak deps, but Noctalia replaces all of them.
   exclude:
@@ -14,6 +18,7 @@ install:
     - fuzzel
     - swaylock
     - waybar
+
   packages:
     # Audio
     - pipewire
