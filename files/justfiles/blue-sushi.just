@@ -39,12 +39,13 @@ firmware-update:
     sudo fwupdmgr refresh
     sudo fwupdmgr update
 
-# Copy the image's default configs into ~/.config (for existing accounts;
-# skel only applies to new users). Existing files are left untouched.
+# File-to-file copies: `cp -r` into an already-existing config dir would
+# nest the files one level too deep, where the app then ignores them.
+# Copy the image's default configs into ~/.config (existing files untouched).
 init-configs:
-    mkdir -p ~/.config
-    cp -rn /usr/etc/skel/.config/niri ~/.config/niri || true
-    cp -rn /usr/etc/skel/.config/noctalia ~/.config/noctalia || true
-    cp -rn /usr/etc/skel/.config/darkman ~/.config/darkman || true
-    cp -rn /usr/etc/skel/.config/ghostty ~/.config/ghostty || true
+    mkdir -p ~/.config/niri ~/.config/noctalia ~/.config/darkman ~/.config/ghostty
+    cp -n /usr/etc/skel/.config/niri/config.kdl ~/.config/niri/config.kdl || true
+    cp -n /usr/etc/skel/.config/noctalia/config.toml ~/.config/noctalia/config.toml || true
+    cp -n /usr/etc/skel/.config/darkman/config.yaml ~/.config/darkman/config.yaml || true
+    cp -n /usr/etc/skel/.config/ghostty/config ~/.config/ghostty/config || true
     echo "Default configs copied (-n: existing files untouched)."

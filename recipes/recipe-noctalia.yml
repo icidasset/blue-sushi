@@ -38,8 +38,6 @@ modules:
         destination: /usr/lib/tmpfiles.d/noctalia-greeter.conf
       - source: environment
         destination: /etc/environment
-      - source: usr/share/backgrounds/blue-sushi/default-wallpaper.png
-        destination: /usr/share/backgrounds/blue-sushi/default-wallpaper.png
 
   # Create the default user. Must run after the files module so that
   # /usr/etc/skel already holds the niri/noctalia/darkman/ghostty configs;
