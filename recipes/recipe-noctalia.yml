@@ -12,6 +12,12 @@ modules:
   - from-file: dnf.yml
   - from-file: gtk/gschema-overrides.yml
 
+  # network-manager-applet ships an autostart entry for its tray applet;
+  # we only want nm-connection-editor on demand, so drop the autostart.
+  - type: script
+    snippets:
+      - rm -f /etc/xdg/autostart/nm-applet.desktop
+
   # Starts the Noctalia shell for every login, regardless of the user's
   # niri config (niri Wants=xdg-desktop-autostart.target).
   - type: files
