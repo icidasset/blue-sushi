@@ -91,6 +91,7 @@ modules:
         install:
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
+          - app.zen_browser.zen
 
   # Installs the soar package manager
   - type: soar

@@ -63,7 +63,6 @@ install:
 
     # Networking
     - bluez                             # Bluetooth daemon
-    - blueman                           # Bluetooth manager
     - NetworkManager
     - tailscale
 
@@ -119,3 +118,9 @@ install:
     ## Nirimod deps
     - python3-gobject                   # PyGObject
     - python3-cairo                     # Pycairo
+
+remove:
+  # Firefox ships in the ublue base image; no default browser wanted.
+  packages:
+    - firefox
+    - firefox-langpacks
