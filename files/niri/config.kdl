@@ -7,6 +7,8 @@ input {
         xkb {
             // Change to your layout (e.g. "us" -> "be") if needed.
             layout "us"
+            // Right Alt becomes Compose (e.g. Compose ' e -> é).
+            options "compose:ralt"
         }
     }
 
