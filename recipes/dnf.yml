@@ -53,9 +53,10 @@ install:
     - udiskie                           # USB auto-mount
 
     # File managers
-    - imv                              # Image viewer (screenshots etc.)
-    - nautilus                         # GUI file manager (GNOME Files, GTK4 → follows dark/light)
-    - yazi                             # TUI file manager (COPR: lihaohong/yazi)
+    - gvfs-smb                          # SMB/CIFS in nautilus (libsmbclient already present)
+    - imv                               # Image viewer (screenshots etc.)
+    - nautilus                          # GUI file manager (GNOME Files, GTK4 → follows dark/light)
+    - yazi                              # TUI file manager (COPR: lihaohong/yazi)
 
     # Fonts
     - google-noto-color-emoji-fonts
