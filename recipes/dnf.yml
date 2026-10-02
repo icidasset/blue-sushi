@@ -55,8 +55,9 @@ install:
     # File managers
     - gvfs-smb                          # SMB/CIFS in nautilus (libsmbclient already present)
     - imv                               # Image viewer (screenshots etc.)
-    - nautilus                          # GUI file manager (GNOME Files, GTK4 → follows dark/light)
-    - yazi                              # TUI file manager (COPR: lihaohong/yazi)
+    - nautilus                         # GUI file manager (GNOME Files, GTK4 → follows dark/light)
+    - sushi                            # GNOME Sushi: spacebar file preview in Files (Quick Look-style)
+    - yazi                             # TUI file manager (COPR: lihaohong/yazi)
 
     # Fonts
     - google-noto-color-emoji-fonts
