@@ -36,6 +36,12 @@ modules:
         destination: /usr/etc/skel/.config/darkman/config.yaml
       - source: ghostty/config
         destination: /usr/etc/skel/.config/ghostty/config
+      # rose-pine themes are absent from this ghostty build's pinned bundle;
+      # vendored from the canonical iTerm2 ghostty theme collection.
+      - source: usr/share/ghostty/themes/rose-pine
+        destination: /usr/share/ghostty/themes/rose-pine
+      - source: usr/share/ghostty/themes/rose-pine-dawn
+        destination: /usr/share/ghostty/themes/rose-pine-dawn
       - source: usr/libexec/blue-sushi-apply-theme.sh
         destination: /usr/libexec/blue-sushi-apply-theme.sh
       - source: greeter/greeter.toml
