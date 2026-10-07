@@ -13,9 +13,10 @@ input {
     }
 
     touchpad {
-        // Framework touchpad.
-        tap-to-click true
-        // natural-scroll true
+        accel-speed -0.1
+        natural-scroll true
+        // Slower two-finger scrolling.
+        scroll-factor 0.5
     }
 }
 
@@ -72,6 +73,12 @@ layer-rule {
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+
+// 10-bit per channel for the external monitor (needs niri >= 26.05; the
+// option is a config error on 26.04, so it stays commented until then).
+// output "DP-3" {
+//     max-bpc 10
+// }
 
 binds {
     // Quit and power
