@@ -1,0 +1,10 @@
+[Unit]
+Description=blue-sushi NZXT mouse side-button remapper (BTN_SIDE->F24, BTN_EXTRA->F19)
+# Started by udev when the NZXT Gaming Mouse appears (99-blue-sushi-mouse.rules,
+# SYSTEMD_WANTS). Exits when the mouse is unplugged; no boot-time start, so
+# machines without this mouse never see the service.
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/blue-sushi-mouse /dev/input/by-id/usb-NZXT__Inc._NZXT_GAMING_MOUSE_47F6284E5B7D5D8F5129FD8DBBBF64A1-event-mouse
+Restart=no

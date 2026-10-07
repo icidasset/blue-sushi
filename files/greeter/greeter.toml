@@ -3,7 +3,7 @@
 # Full example: https://github.com/noctalia-dev/noctalia-greeter/blob/main/examples/greeter.toml
 
 [session]
-default = "Niri"
+default = "Umbriel"
 
 [appearance]
 scheme = "Noctalia"

@@ -1,0 +1,225 @@
+# blue-sushi default Umbriel configuration
+# Docs: https://docs.noctalia.dev/umbriel/
+# Starting config: /usr/share/umbriel/config.toml
+# Check edits with: umbriel config validate
+
+# ==============================================================================
+# Includes
+# Output sections live in outputs.toml so the Noctalia umbriel-displays plugin
+# can manage them (it rewrites that file on every change). config.toml must NOT
+# declare [output.*] of its own, because the including file's values override
+# the include.
+
+[include]
+files = ["outputs.toml"]
+
+# ==============================================================================
+# General
+
+[general]
+# Only udiskie: Noctalia and Vicinae already start via /etc/xdg/autostart
+# (noctalia.desktop, vicinae-server.desktop) — listing them here too spawns
+# duplicate instances.
+autostart = ["udiskie"]
+
+# ==============================================================================
+# Appearance
+[appearance]
+# No border around the (focused) window.
+border_width = 0
+outer_border_width = 0
+
+[appearance.shadow]
+enabled = true
+offset_x = 2
+offset_y = 2
+softness = 8
+
+[colors]
+shadow = "#00000020"   # shadow color+alpha (RRGGBBAA); default #0000007f (~50%), now ~25%
+
+[appearance.blur]
+# Blur uses a smaller radius than the built-in default.
+radius = 3
+
+# ==============================================================================
+# Input
+# Enable NumLock when a physical keyboard connects.
+[input]
+middle_click_paste = false   # no middle-click paste (accidental touchpad pastes)
+
+[input.keyboard]
+layout = "us"
+options = "compose:ralt"   # Right Alt = compose, for accents (same as niri)
+numlock_toggle = true
+
+[input.touchpad]
+natural_scroll = true
+click_method = "clickfinger"
+scroll_factor = 0.4        # Slower scrolling, matches niri's scroll-factor
+tap = true                 # tap-to-click (default, explicit for clarity)
+
+[input.mouse]
+scroll_wheel_step = 24     # 0.4x the default 60px step, matches niri
+
+# ==============================================================================
+# Layout
+# New scrolling-layout windows start at half the output width.
+[layout]
+extent_presets = [0.333, 0.5, 0.667]
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+
+# ==============================================================================
+# Keybinds
+# Defining this table replaces the built-in bind set, so every active bind is
+# listed here. Keybinds doc: https://docs.noctalia.dev/umbriel/keybinds/
+# Keys use xkb keysym names: Print (PrintScreen), Prior/Next (PageUp/PageDown).
+
+[keybinds]
+
+# Applications and session
+"Mod+Return" = { action = "spawn:ghostty", repeat = false }
+"Mod+Space" = { action = "spawn:vicinae toggle", repeat = false }
+"Mod+S" = "scratchpad-toggle"
+"Mod+Comma" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
+"Alt+Tab" = { action = "spawn:noctalia msg window-switcher", repeat = false }
+"Mod+Escape" = "spawn:noctalia msg session lock"
+"Print" = { action = "spawn:noctalia msg screenshot-region", repeat = false }
+"Mod+Shift+E" = { action = "session-quit", repeat = false }
+"Mod+Shift+P" = { action = "dpms-off", repeat = false }
+
+# Audio and brightness (OSD handled by Noctalia)
+"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
+"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down"
+"XF86AudioMute" = "spawn:noctalia msg volume-mute"
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
+
+# Focus
+"Mod+Left" = "window-focus-left"
+"Mod+Down" = "window-focus-down"
+"Mod+Up" = "window-focus-up"
+"Mod+Right" = "window-focus-right"
+"Mod+H" = "window-focus-left"
+"Mod+J" = "window-focus-down"
+"Mod+K" = "window-focus-up"
+"Mod+L" = "window-focus-right"
+
+# Move windows / columns
+"Mod+Shift+Left" = "column-move-left"
+"Mod+Shift+Down" = "window-move-down"
+"Mod+Shift+Up" = "window-move-up"
+"Mod+Shift+Right" = "column-move-right"
+"Mod+Shift+H" = "column-move-left"
+"Mod+Shift+J" = "window-move-down"
+"Mod+Shift+K" = "window-move-up"
+"Mod+Shift+L" = "column-move-right"
+
+# Window state
+"Mod+F" = "window-toggle-maximize"
+"Mod+Shift+F" = { action = "window-toggle-fullscreen", repeat = false }
+"Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
+"Mod+V" = { action = "window-toggle-floating", repeat = false }
+"Mod+Shift+V" = { action = "window-focus-switch-floating", repeat = false }
+"Mod+P" = { action = "window-toggle-pinned", repeat = false }
+"Mod+W" = { action = "column-toggle-tabbed", repeat = false }
+"Mod+Alt+Left" = "column-focus-tab-previous"
+"Mod+Alt+Right" = "column-focus-tab-next"
+"Mod+Period" = "window-consume-right"
+"Mod+R" = "window-cycle-primary-extent"
+"Mod+Shift+R" = "window-cycle-primary-extent-back"
+"Mod+WheelUp" = "window-focus-left"
+"Mod+WheelDown" = "window-focus-right"
+"Mod+Shift+Prior" = "window-consume-left"
+"Mod+Shift+Next" = "window-consume-or-expel-left"
+"Mod+Q" = { action = "window-close", repeat = false }
+
+# Overview
+"Mod+O" = { action = "overview-toggle", repeat = false }
+# Mouse side buttons (NZXT Gaming Mouse) remapped by the blue-sushi-mouse
+# systemd service (uinput daemon): BTN_SIDE -> F24 (overview), BTN_EXTRA ->
+# F19 (vicinae). F13 is unbound in the stock keymap (no keysym), so it never
+# matches; F19/F24 are the highest F-keys the default xkb layout maps.
+# BTN_EXTRA -> F13 (vicinae). Bare keys need no modifier. Umbriel rejects bare
+# mouse-button binds by design, hence the remap.
+"F24" = { action = "overview-toggle", repeat = false }
+"F19" = { action = "spawn:vicinae open", repeat = false }
+
+# Workspaces
+"Mod+Prior" = "workspace-previous"
+"Mod+Next" = "workspace-next"
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+"Mod+Shift+1" = "window-move-to-workspace:1"
+"Mod+Shift+2" = "window-move-to-workspace:2"
+"Mod+Shift+3" = "window-move-to-workspace:3"
+"Mod+Shift+4" = "window-move-to-workspace:4"
+"Mod+Shift+5" = "window-move-to-workspace:5"
+"Mod+Shift+6" = "window-move-to-workspace:6"
+"Mod+Shift+7" = "window-move-to-workspace:7"
+"Mod+Shift+8" = "window-move-to-workspace:8"
+"Mod+Shift+9" = "window-move-to-workspace:9"
+
+# Scratchpads: park a window (Mod+Shift+S), summon it (Mod+S), restore it
+# to its workspace (Mod+Ctrl+S), or cycle its windows (Mod+Alt+S).
+"Mod+Shift+S" = { action = "window-move-to-scratchpad", repeat = false }
+"Mod+Ctrl+S" = { action = "window-restore-from-scratchpad", repeat = false }
+"Mod+Alt+S" = "scratchpad-focus-next"
+"Mod+Tab" = "window-focus-next"
+
+# Escape hatch for shortcuts inhibition (games, remote desktop)
+"Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+
+# ==============================================================================
+# Window rules
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_floating = true
+default_floating_size_px = { width = 1020, height = 900 }
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 600 }
+
+[[window_rule]]
+match.title = "^(Picture-in-Picture|Picture in picture)$"
+default_floating = true
+default_maximize = false
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop"
+default_position = { x = 0, y = 0, anchor = "bottom_right" }
+default_focused = false
+default_pinned = true
+
+# ==============================================================================
+# Layer rules
+# Noctalia shell surfaces (bar, panels, dock, OSD) blur over the backdrop.
+# Small surfaces, cheap; full-window blur was removed for performance.
+
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_popups = true
+blur_optimized = false
+
+# ==============================================================================
+# Hot corners
+# The top-left hot corner opens the overview after a short delay.
+# [hot_corners.top_left]
+# enabled = true
+# delay_ms = 500
+# action = "overview-open"

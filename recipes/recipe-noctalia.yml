@@ -30,6 +30,10 @@ modules:
         destination: /usr/etc/skel/.config/niri/config.kdl
       - source: noctalia/config.toml
         destination: /usr/etc/skel/.config/noctalia/config.toml
+      - source: umbriel/config.toml
+        destination: /usr/etc/skel/.config/umbriel/config.toml
+      - source: umbriel/outputs.toml
+        destination: /usr/etc/skel/.config/umbriel/outputs.toml
       - source: greetd/config.toml
         destination: /etc/greetd/config.toml
       - source: darkman/config.yaml
@@ -44,12 +48,22 @@ modules:
         destination: /usr/share/ghostty/themes/rose-pine-dawn
       - source: usr/libexec/blue-sushi-apply-theme.sh
         destination: /usr/libexec/blue-sushi-apply-theme.sh
+      # NZXT mouse side buttons -> F24/F13 via a small uinput daemon (compiled
+      # by build-mouse-daemon.sh; Umbriel binds the resulting bare keys).
+      - source: usr/local/bin/blue-sushi-mouse.c
+        destination: /usr/local/bin/blue-sushi-mouse.c
+      - source: etc/systemd/system/blue-sushi-mouse.service
+        destination: /etc/systemd/system/blue-sushi-mouse.service
+      - source: usr/lib/udev/rules.d/99-blue-sushi-mouse.rules
+        destination: /usr/lib/udev/rules.d/99-blue-sushi-mouse.rules
       - source: greeter/greeter.toml
         destination: /usr/share/noctalia-greeter/greeter.toml
       - source: tmpfiles.d/noctalia-greeter.conf
         destination: /usr/lib/tmpfiles.d/noctalia-greeter.conf
       - source: environment
         destination: /etc/environment
+      - source: etc/xdg-desktop-portal/portals.conf
+        destination: /etc/xdg-desktop-portal/portals.conf
 
   # Create the default user. Must run after the files module so that
   # /usr/etc/skel already holds the niri/noctalia/darkman/ghostty configs;
@@ -60,6 +74,11 @@ modules:
 
   # Custom ujust recipes (files/justfiles/*.just)
   - type: justfiles
+
+  # Compiles the mouse side-button daemon (see files/usr/local/bin).
+  - type: script
+    scripts:
+      - build-mouse-daemon.sh
 
   # Nerd Font symbols — file-type icons for yazi.
   - type: fonts

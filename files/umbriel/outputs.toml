@@ -1,0 +1,4 @@
+# Machine-specific output sections, managed by the Noctalia umbriel-displays
+# plugin (it rewrites this file on every change). Included from config.toml —
+# that file must not declare [output.*] of its own, or it would override this
+# include. Empty = auto-layout everything.

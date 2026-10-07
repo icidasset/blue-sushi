@@ -1,0 +1,5 @@
+# blue-sushi: run the mouse side-button daemon only while the NZXT Gaming
+# Mouse (1e71:2124) is connected. Matches the pointer node only
+# (ID_INPUT_MOUSE=1), fires exactly once per connect; the daemon exits when
+# the device disappears.
+ACTION=="add", SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", ENV{ID_VENDOR_ID}=="1e71", ENV{ID_MODEL_ID}=="2124", TAG+="systemd", ENV{SYSTEMD_WANTS}="blue-sushi-mouse.service"
