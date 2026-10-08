@@ -93,11 +93,12 @@ default_extent_fraction = 0.5
 "Mod+Shift+P" = { action = "dpms-off", repeat = false }
 
 # Audio and brightness (OSD handled by Noctalia)
-"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
-"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down"
-"XF86AudioMute" = "spawn:noctalia msg volume-mute"
-"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
-"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
+# allow_when_locked: keep volume/brightness working on the lock screen
+"XF86AudioRaiseVolume" = { action = "spawn:noctalia msg volume-up", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn:noctalia msg volume-down", allow_when_locked = true }
+"XF86AudioMute" = { action = "spawn:noctalia msg volume-mute", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn:noctalia msg brightness-up", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down", allow_when_locked = true }
 
 # Focus
 "Mod+Left" = "window-focus-left"
@@ -230,6 +231,12 @@ default_extent_fraction = 0.5
 "submap[ovl],space" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
 "submap[ovl],backslash" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
 "submap[ovl],grave" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
+# Cycle through window cards while the overview is open (click or Enter
+# on the selected card to land; plain wheel between workspaces still works).
+"submap[ovl],Mod+WheelDown" = "window-focus-next"
+"submap[ovl],Mod+WheelUp" = "window-focus-previous"
+"submap[ovl],Tab" = "window-focus-next"
+"submap[ovl],Shift+Tab" = "window-focus-previous"
 "submap[ovl],Escape" = "submap:reset"
 "submap[ovl],Mod+O" = { action = "overview-close", submap = "reset", repeat = false }
 "submap[ovl],F24" = { action = "overview-close", submap = "reset", repeat = false }
