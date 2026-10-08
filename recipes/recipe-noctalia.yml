@@ -64,6 +64,10 @@ modules:
         destination: /etc/environment
       - source: etc/xdg-desktop-portal/portals.conf
         destination: /etc/xdg-desktop-portal/portals.conf
+      - source: usr/etc/skel/.local/bin/umbriel-overview-vicinae.py
+        destination: /usr/etc/skel/.local/bin/umbriel-overview-vicinae.py
+      - source: usr/etc/skel/.config/systemd/user/umbriel-overview-launcher.service
+        destination: /usr/etc/skel/.config/systemd/user/umbriel-overview-launcher.service
 
   # Create the default user. Must run after the files module so that
   # /usr/etc/skel already holds the niri/noctalia/darkman/ghostty configs;
@@ -113,6 +117,7 @@ modules:
     user:
       enabled:
         - darkman.service
+        - umbriel-overview-launcher.service
 
   # Flatpak management GUI (Flathub remote is preconfigured in base-main).
   - type: default-flatpaks

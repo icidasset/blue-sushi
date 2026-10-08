@@ -67,6 +67,7 @@ scroll_wheel_step = 24     # 0.4x the default 60px step, matches niri
 # Layout
 # New scrolling-layout windows start at half the output width.
 [layout]
+gap = 12   # matches niri's "gaps 12"
 extent_presets = [0.333, 0.5, 0.667]
 
 [layout.scrolling]
@@ -176,6 +177,62 @@ default_extent_fraction = 0.5
 "Mod+Ctrl+S" = { action = "window-restore-from-scratchpad", repeat = false }
 "Mod+Alt+S" = "scratchpad-focus-next"
 "Mod+Tab" = "window-focus-next"
+
+# Type-to-launch: while the overview is open, the umbriel-overview-launcher
+# service enters the "ovl" submap; any printable key opens vicinae prefilled
+# with that key (vicinae open -q) and resets the submap, so the rest of the
+# query types into vicinae. Escape/Mod+O/mouse-back close the overview.
+"submap[ovl],a" = { action = "spawn:vicinae open -q \"a\"", submap = "reset", repeat = false }
+"submap[ovl],b" = { action = "spawn:vicinae open -q \"b\"", submap = "reset", repeat = false }
+"submap[ovl],c" = { action = "spawn:vicinae open -q \"c\"", submap = "reset", repeat = false }
+"submap[ovl],d" = { action = "spawn:vicinae open -q \"d\"", submap = "reset", repeat = false }
+"submap[ovl],e" = { action = "spawn:vicinae open -q \"e\"", submap = "reset", repeat = false }
+"submap[ovl],f" = { action = "spawn:vicinae open -q \"f\"", submap = "reset", repeat = false }
+"submap[ovl],g" = { action = "spawn:vicinae open -q \"g\"", submap = "reset", repeat = false }
+"submap[ovl],h" = { action = "spawn:vicinae open -q \"h\"", submap = "reset", repeat = false }
+"submap[ovl],i" = { action = "spawn:vicinae open -q \"i\"", submap = "reset", repeat = false }
+"submap[ovl],j" = { action = "spawn:vicinae open -q \"j\"", submap = "reset", repeat = false }
+"submap[ovl],k" = { action = "spawn:vicinae open -q \"k\"", submap = "reset", repeat = false }
+"submap[ovl],l" = { action = "spawn:vicinae open -q \"l\"", submap = "reset", repeat = false }
+"submap[ovl],m" = { action = "spawn:vicinae open -q \"m\"", submap = "reset", repeat = false }
+"submap[ovl],n" = { action = "spawn:vicinae open -q \"n\"", submap = "reset", repeat = false }
+"submap[ovl],o" = { action = "spawn:vicinae open -q \"o\"", submap = "reset", repeat = false }
+"submap[ovl],p" = { action = "spawn:vicinae open -q \"p\"", submap = "reset", repeat = false }
+"submap[ovl],q" = { action = "spawn:vicinae open -q \"q\"", submap = "reset", repeat = false }
+"submap[ovl],r" = { action = "spawn:vicinae open -q \"r\"", submap = "reset", repeat = false }
+"submap[ovl],s" = { action = "spawn:vicinae open -q \"s\"", submap = "reset", repeat = false }
+"submap[ovl],t" = { action = "spawn:vicinae open -q \"t\"", submap = "reset", repeat = false }
+"submap[ovl],u" = { action = "spawn:vicinae open -q \"u\"", submap = "reset", repeat = false }
+"submap[ovl],v" = { action = "spawn:vicinae open -q \"v\"", submap = "reset", repeat = false }
+"submap[ovl],w" = { action = "spawn:vicinae open -q \"w\"", submap = "reset", repeat = false }
+"submap[ovl],x" = { action = "spawn:vicinae open -q \"x\"", submap = "reset", repeat = false }
+"submap[ovl],y" = { action = "spawn:vicinae open -q \"y\"", submap = "reset", repeat = false }
+"submap[ovl],z" = { action = "spawn:vicinae open -q \"z\"", submap = "reset", repeat = false }
+"submap[ovl],0" = { action = "spawn:vicinae open -q \"0\"", submap = "reset", repeat = false }
+"submap[ovl],1" = { action = "spawn:vicinae open -q \"1\"", submap = "reset", repeat = false }
+"submap[ovl],2" = { action = "spawn:vicinae open -q \"2\"", submap = "reset", repeat = false }
+"submap[ovl],3" = { action = "spawn:vicinae open -q \"3\"", submap = "reset", repeat = false }
+"submap[ovl],4" = { action = "spawn:vicinae open -q \"4\"", submap = "reset", repeat = false }
+"submap[ovl],5" = { action = "spawn:vicinae open -q \"5\"", submap = "reset", repeat = false }
+"submap[ovl],6" = { action = "spawn:vicinae open -q \"6\"", submap = "reset", repeat = false }
+"submap[ovl],7" = { action = "spawn:vicinae open -q \"7\"", submap = "reset", repeat = false }
+"submap[ovl],8" = { action = "spawn:vicinae open -q \"8\"", submap = "reset", repeat = false }
+"submap[ovl],9" = { action = "spawn:vicinae open -q \"9\"", submap = "reset", repeat = false }
+"submap[ovl],period" = { action = "spawn:vicinae open -q \".\"", submap = "reset", repeat = false }
+"submap[ovl],comma" = { action = "spawn:vicinae open -q \",\"", submap = "reset", repeat = false }
+"submap[ovl],slash" = { action = "spawn:vicinae open -q \"/\"", submap = "reset", repeat = false }
+"submap[ovl],semicolon" = { action = "spawn:vicinae open -q \";\"", submap = "reset", repeat = false }
+"submap[ovl],apostrophe" = { action = "spawn:vicinae open -q \"'\"", submap = "reset", repeat = false }
+"submap[ovl],minus" = { action = "spawn:vicinae open -q \"-\"", submap = "reset", repeat = false }
+"submap[ovl],equal" = { action = "spawn:vicinae open -q \"=\"", submap = "reset", repeat = false }
+"submap[ovl],bracketleft" = { action = "spawn:vicinae open -q \"[\"", submap = "reset", repeat = false }
+"submap[ovl],bracketright" = { action = "spawn:vicinae open -q \"]\"", submap = "reset", repeat = false }
+"submap[ovl],space" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
+"submap[ovl],backslash" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
+"submap[ovl],grave" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
+"submap[ovl],Escape" = "submap:reset"
+"submap[ovl],Mod+O" = { action = "overview-close", submap = "reset", repeat = false }
+"submap[ovl],F24" = { action = "overview-close", submap = "reset", repeat = false }
 
 # Escape hatch for shortcuts inhibition (games, remote desktop)
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
