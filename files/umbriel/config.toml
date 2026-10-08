@@ -233,6 +233,7 @@ default_extent_fraction = 0.5
 "submap[ovl],Escape" = "submap:reset"
 "submap[ovl],Mod+O" = { action = "overview-close", submap = "reset", repeat = false }
 "submap[ovl],F24" = { action = "overview-close", submap = "reset", repeat = false }
+"submap[ovl],F19" = { action = "spawn:vicinae open", submap = "reset", repeat = false }
 
 # Escape hatch for shortcuts inhibition (games, remote desktop)
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
