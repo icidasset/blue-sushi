@@ -47,6 +47,8 @@ install:
 
     # Display
     - brightnessctl
+    - mpv                               # software-mirror player (sword mirror-screen)
+    - wf-recorder                       # wayland screen recorder (sword mirror-screen)
 
     # File systems
     - fuse
@@ -107,6 +109,7 @@ install:
 
     ## Desktop misc, GTK, X11, etc.
     - gio
+    - gnome-network-displays              # Miracast/Chromecast screen mirroring to TVs
     - grim
     - gtk4
     - libadwaita
