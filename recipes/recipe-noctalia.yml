@@ -8,7 +8,6 @@ image-version: latest
 # Module configuration, executed in order.
 ########################################################
 modules:
-  - from-file: akmods.yml
   - from-file: dnf.yml
   - from-file: gtk/gschema-overrides.yml
 
