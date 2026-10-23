@@ -1,0 +1,17 @@
+[terra]
+name=Terra $releasever
+baseurl=https://repos.fyralabs.com/terra$releasever
+type=rpm
+# Terra's repomd.xml signature verification is broken upstream (2026-10:
+# "repomd.xml GPG signature verification error: Bad PGP signature"), which
+# silently skips the repo and fails every build on noctalia-greeter,
+# umbriel-nightly, vicinae, ghostty, ...
+# Package signatures are still enforced (gpgcheck=1); only the metadata
+# signature check is disabled until Terra fixes their signing pipeline.
+skip_if_unavailable=False
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc
+enabled=1
+enabled_metadata=1
+metadata_expire=4h

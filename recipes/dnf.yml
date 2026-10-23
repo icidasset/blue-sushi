@@ -4,8 +4,11 @@ repos:
   # (not in Fedora). noctalia itself ships in the Fedora 44+ default repos,
   # so no Terra package is needed for it. Kept in the image so `rpm-ostree
   # install` can use it on the live system.
+  # Local copy of the subatomic repo file with repo_gpgcheck disabled: Terra's
+  # repomd signature verification is currently broken upstream (BAD PGP
+  # signature), which silently skips the repo and fails the build.
   files:
-    - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+    - terra.repo
 
   # yazi (TUI file manager) — unofficial COPR per the official yazi docs.
   copr:
