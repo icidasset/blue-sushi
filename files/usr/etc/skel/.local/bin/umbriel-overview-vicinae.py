@@ -37,9 +37,9 @@ def main():
             ev = json.loads(line)
             if ev.get("event") == "overview":
                 if ev["data"].get("open"):
-                    sock.sendall((json.dumps({"cmd": "msg", "arg": f"submap:{SUBMAP}"}) + "\n").encode())
+                    sock.sendall((json.dumps({"cmd": "msg", "arg": f"submap {SUBMAP}"}) + "\n").encode())
                 else:
-                    sock.sendall((json.dumps({"cmd": "msg", "arg": "submap:reset"}) + "\n").encode())
+                    sock.sendall((json.dumps({"cmd": "msg", "arg": "submap reset"}) + "\n").encode())
         except (socket.timeout, BlockingIOError):
             continue
         except (ConnectionError, OSError, json.JSONDecodeError, KeyError):
